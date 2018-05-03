@@ -1,0 +1,7 @@
+# Ignore all compiled content:
+/build
+**/build
+
+# Ignore all dependency binaries:
+/node_modules
+**/node_modules

@@ -1,0 +1,29 @@
+{
+  "name": "haximilian-solidity",
+  "version": "0.0.1",
+  "description": "A set of contracts and libraries designed for more complex use cases",
+  "main": "index.js",
+  "author": "Haximilian <haximilian@gmail.com>",
+  "contributors": [],
+  "license": "AGPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haximilian/haximilian-solidity.git"
+  },
+  "keywords": [
+    "solidity",
+    "library",
+    "haximilian"
+  ],
+  "scripts": {
+    "test": "truffle test",
+    "build": "truffle compile",
+    "deploy": "truffle deploy"
+  },
+  "dependencies": {
+    "zeppelin-solidity": "1.8.0"
+  },
+  "devDependencies": {
+    "truffle": "^4.1.7"
+  }
+}
