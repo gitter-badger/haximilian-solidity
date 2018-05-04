@@ -1,8 +1,5 @@
 # TODO Only push the compiled files (& possibly docs but probably not) to NPM
 
-# Ignore the project source code:
-/migrations
-
 # Ignore the unit tests:
 /test
 
