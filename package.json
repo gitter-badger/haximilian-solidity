@@ -21,7 +21,7 @@
     "deploy": "truffle deploy"
   },
   "dependencies": {
-    "zeppelin-solidity": "1.8.0"
+    "openzeppelin-solidity": "1.8.0"
   },
   "devDependencies": {
     "truffle": "^4.1.7"
