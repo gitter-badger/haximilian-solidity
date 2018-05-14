@@ -1,7 +1,7 @@
-# TODO Only push the compiled files (& possibly docs but probably not) to NPM
-
-# Ignore the unit tests:
+# Ignore all non-solidity source files & directories:
+/src
 /test
+truffle-config.js
 
 # Ignore all source/editing configuration files & directories:
 /.*

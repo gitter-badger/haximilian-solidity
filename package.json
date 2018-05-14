@@ -16,14 +16,17 @@
     "haximilian"
   ],
   "scripts": {
-    "test": "truffle test",
     "build": "truffle compile",
-    "deploy": "truffle deploy"
+    "migrate": "truffle migrate",
+    "serve": "http-server -p 8080 -a 127.0.0.1 -o",
+    "test": "truffle test"
   },
   "dependencies": {
-    "openzeppelin-solidity": "1.8.0"
+    "openzeppelin-solidity": "1.8.0",
+    "web3": "github:ethereum/web3.js"
   },
   "devDependencies": {
+    "http-server": "^0.11.1",
     "truffle": "^4.1.7"
   }
 }

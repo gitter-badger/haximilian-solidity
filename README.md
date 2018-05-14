@@ -15,6 +15,7 @@ A set of contracts and libraries designed for more complex use cases
 ![NPM Downloads](https://img.shields.io/npm/dt/haximilian-solidity.svg)
 ![NPM Downloads/week](https://img.shields.io/npm/dw/haximilian-solidity.svg)
 
+
 ## [<img src="https://opensource.org/files/osi_symbol.png" width="50">](https://opensource.org/licenses/AGPL-3.0) License
 *Copyright &copy; 2018 Haximilian*<br/>
 **This project is licensed under the [GNU Affero General Public License Agreement v3.0 (AGPL-3.0)](https://opensource.org/licenses/AGPL-3.0).**<br>
@@ -39,7 +40,9 @@ Inside your solidity contracts, you can include each contract from its respectiv
 ```solidity
 include "haximilian-solidity/contracts/staging/Staging.sol";
 ```
-For more information, see the *USAGE.md* file located inside each subdirectory of *haximilian-solidity/contracts*.
+For more information, see the *USAGE.md* file located inside each subdirectory of *haximilian-solidity/contracts*:
+
+ - [haximilian-solidity/contracts/management](contracts/management/USAGE.md)
 
 ## Building from source
 To get things started, you'll need to [install NPM](https://docs.npmjs.com/getting-started/installing-node#install-npm--manage-npm-versions).
@@ -52,9 +55,18 @@ Just grab the latest stable version off the official GitHub page:
 Enter into the new directory ("./haximilian-solidity") and run NPM:
 > npm install
 
-### Compile and deploy
+### Compile and migrate
 Building the contracts is as easy as running
 > npm run build
 
-Then, all you need to do to deploy the code to the network is to make sure that you have an ethereum node running, pointed to the desired network, and simply run
-> npm run deploy
+Then, all you need to do to migrate the code to the blockchain is to make sure that you have an ethereum node running, pointed to the desired network, and simply run
+> npm run migrate
+
+<!--  TODO Uncomment once the testing pages have been implemented.
+
+## Run the test server
+To test out the contracts functionality using the web provided web interface, first make sure that you have [MetaMask](https://metamask.io/) installed, and run
+> npm run serve
+
+Then, use the newly opened browser window to navigate to "src/index.xhtml" to access the testing pages.
+-->
