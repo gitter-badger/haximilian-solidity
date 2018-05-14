@@ -1,6 +1,6 @@
 {
   "name": "haximilian-solidity",
-  "version": "0.0.1",
+  "version": "0.0.2-unstable",
   "description": "A set of contracts and libraries designed for more complex use cases",
   "main": "index.js",
   "author": "Haximilian <haximilian@gmail.com>",
