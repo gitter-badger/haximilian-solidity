@@ -35,6 +35,10 @@ The current stable version of this project can be installed from [NPM](https://w
 
 > npm install --save haximilian-solidity
 
+Alternatively, you can install the bleeding-edge, **highly unstable** version of the library to gain access to the very latest developmental contract templates, but this **for development use only** and **under no circumstances should be used in production**:
+
+> npm install --save haximilian-solidity@unstable
+
 ### Using the libraries
 Inside your solidity contracts, you can include each contract from its respective directory. For example:
 ```solidity
@@ -50,6 +54,9 @@ To get things started, you'll need to [install NPM](https://docs.npmjs.com/getti
 ### Get the code
 Just grab the latest stable version off the official GitHub page:
 > git clone https://github.com/haximilian/haximilian-solidity.git
+
+Or grab the unstable code, but once again, **you shouldn't do this unless you know what you're doing**:
+> git clone -b unstable https://github.com/haximilian/haximilian-solidity.git
 
 ### Install Dependencies
 Enter into the new directory ("./haximilian-solidity") and run NPM:
