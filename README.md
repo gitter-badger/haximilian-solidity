@@ -69,11 +69,8 @@ Building the contracts is as easy as running
 Then, all you need to do to migrate the code to the blockchain is to make sure that you have an ethereum node running, pointed to the desired network, and simply run
 > npm run migrate
 
-<!--  TODO Uncomment once the testing pages have been implemented.
-
 ## Run the test server
-To test out the contracts functionality using the web provided web interface, first make sure that you have [MetaMask](https://metamask.io/) installed, and run
+To test out the functionality of the deployed contracts using the provided web interface, first make sure that you have [MetaMask](https://metamask.io/) installed, and run
 > npm run serve
 
 Then, use the newly opened browser window to navigate to "src/index.xhtml" to access the testing pages.
--->

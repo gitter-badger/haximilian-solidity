@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml11-transitional.dtd">
+<!--
+Copyright (C) 2018 Haximilian
+This file is part of the program Haximilian Solidity.
+
+Haximilian Solidity is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+Haximilian Solidity is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head lang="en">
+    <title>Killable - Haximilian Solidity Examples</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="author" content="Haximilian &lt;haximilian@gmail.com&gt;"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" type="image/png" href="../favicon.png"/>
+
+    <!-- Load Styles -->
+    <link rel="stylesheet" type="text/css" href="../style.css"/>
+
+    <!-- Load Scripts -->
+    <script type="text/javascript" src="../loadJSON.js"></script>
+    <script type="text/javascript" src="../../node_modules/web3/dist/web3.min.js"></script>
+    <script type="text/javascript" src="../info.js"></script>
+    <script type="text/javascript" src="killable.js"></script>
+    <script type="text/javascript">
+      if (typeof web3 != "undefined")
+        web3 = new Web3(web3.currentProvider);
+      else
+        web3 = new Web3(new Web3.providers.HttpProviders("http://localhost:8545"));
+    </script>
+  </head>
+  <body onload="run(web3)">
+    <table>
+      <thead>
+        <tr><th colspan="3"><h1><a href="../index.xhtml">Haximilian Solidity Examples</a></h1></th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="3" id="WEB3">
+          </td>
+        </tr>
+        <tr>
+          <td width="15%" rowspan="2"></td>
+          <td class="content">
+            <label>Address: 0x</label><span><input type="text" id="ADDRESS"/></span>
+            <label>New Owner: 0x</label><span><input type="text" id="OWNER"/></span>
+            <label>New Inheritor: 0x</label><span><input type="text" id="INHERITOR"/></span>
+            <input type="button" value="Get Owner" onclick="getOwner();"/>
+            <input type="button" value="Set Owner" onclick="setOwner();"/>
+            <input type="button" value="Get Inheritor" onclick="getInheritor();"/>
+            <input type="button" value="Set Inheritor" onclick="setInheritor();"/>
+            <input type="button" value="Kill" onclick="kill();"/>
+          </td>
+          <td width="15%" rowspan="2"></td>
+        </tr>
+        <tr>
+          <td><div id="OUTPUT"></div></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr><td colspan="3">
+          <div id="COPYRIGHT">Copyright &copy; 2018 Haximilian</div><br/>
+          This project is provided under the terms of the GNU AGPLv3.0 license agreement.
+          Please see the included <a href="../../LICENSE.md">LICENSE.md</a> file for licensing information
+        </td></tr>
+      </tfoot>
+    </table>
+  </body>
+</html>

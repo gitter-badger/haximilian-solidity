@@ -1,0 +1,92 @@
+html {
+  background-attachment: fixed;
+  background-image: url('./background.jpg');
+  background-position: center;
+  background-repeat: repeat-x;
+  background-size: cover;
+}
+
+table {
+  background: #000000;
+  color: black;
+  margin: auto;
+  opacity: 0.92;
+  text-align: center;
+  width: 75%;
+}
+
+table>* {
+  background: #8888FF;
+}
+
+thead {
+  color: black;
+  text-decoration: underline;
+}
+
+tbody {
+  text-align: left;
+  vertical-align: top;
+}
+
+tbody td {
+  padding: 20px;
+  font-size: 15pt;
+}
+
+tbody td h1 {
+  font-size: 20pt;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+thead a {
+  color: black;
+}
+
+span {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.2em;
+}
+
+input {
+  font-size: 1em;
+  height: 1.5em;
+  line-height: 1.5em;
+  width: 100%;
+}
+
+label {
+  display: block;
+  float: left;
+  font-size: 1em;
+  height: 1.5em;
+  line-height: 1.5em;
+  padding-top: 0.2em;
+}
+
+.content {
+  background: #BBBBFF;
+  display: block;
+  padding: 1em;
+  text-align: left;
+}
+
+#WEB3 {
+  padding: 10px;
+  text-align: center;
+}
+
+#OUTPUT {
+  background-color: black;
+  color: white;
+  height: 10em;
+  overflow-y: scroll;
+}
+
+#COPYRIGHT {
+  font-size: 15pt;
+  font-style: italic;
+  text-decoration: underline;
+}
