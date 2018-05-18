@@ -46,8 +46,8 @@ contract Killable is Ownable {
     * Kills the contract on contact from the owner & forewards all remaining Ether to the inheritor
     */
     function kill() public onlyOwner {
+        emit Destroyed();
         selfdestruct(inheritor);
-        emit Destroyed(); /* TODO test whether or not events will fire after "selfdestruct" is called */
     }
 
     /**
