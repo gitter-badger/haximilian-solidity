@@ -22,6 +22,9 @@
 /* globals web3 */
 "use strict";
 
+/**
+* Provides a base function to execute which retrieves the default account & network version, and displays them
+*/
 window.run = function() {
   var network = "UNDEFINED",
       account = "UNDEFINED",
@@ -34,17 +37,27 @@ window.run = function() {
     div.innerHTML = "<b>Web3 Network: </b>" + network + "<br/><b>Wallet Account: </b>" + account;
   }
 
+  /**
+  * Retrieve the network version and display it on the screen
+  */
   web3.version.getNetwork(function(err, net) {
-    if (err !== null)
-      return console.error(err);
+    if (err !== null) {
+      console.error(err);
+      return;
+    }
     console.log("Netowrk set to \"" + net + "\"");
     network = net;
     setContent();
   });
 
+  /**
+  * Retreieve the default account and display it on the screen
+  */
   web3.eth.getAccounts(function(err, acc) {
-    if (err !== null)
-      return console.error(err);
+    if (err !== null) {
+      console.error(err);
+      return;
+    }
     console.log("Account set to \"" + acc + "\"");
     account = acc;
     setContent();

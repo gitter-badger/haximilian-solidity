@@ -38,7 +38,7 @@ function output(text) {
 }
 
 /**
-* Sets the currnet instance according to the provided address
+* Sets the currnet contract instance according to the provided address
 */
 function setInstance() {
   // Acquire the address:
@@ -60,7 +60,16 @@ function setInstance() {
     });
   });
 
+  /**
+  * Initialize the event listeners on the newly created instance
+  * @param {object} _instance The contract handle on which to set the listeners
+  */
   instance.then((_instance) => {
+    /**
+    * When the `InheritorChanged` event is triggered, print a response to the in-app console
+    * @param {object} err The error object, in case something goes wrong in regestering the event listener
+    * @param {object} response The object produced when the blockchain event is triggered.
+    */
     _instance.InheritorChanged({}).watch((err, response) => {
       if (err) {
         console.error(err);
@@ -74,6 +83,11 @@ function setInstance() {
       }
     });
 
+    /**
+    * When the `OwnershipTransferred` event is triggered, print a response to the in-app console
+    * @param {object} err The error object, in case something goes wrong in regestering the event listener
+    * @param {object} response The object produced when the blockchain event is triggered.
+    */
     _instance.OwnershipTransferred({}).watch((err, response) => {
       if (err) {
         console.error(err);
@@ -87,6 +101,12 @@ function setInstance() {
       }
     });
 
+
+    /**
+    * When the `Destroyed` event is triggered, print a response to the in-app console
+    * @param {object} err The error object, in case something goes wrong in regestering the event listener
+    * @param {object} response The object produced when the blockchain event is triggered.
+    */
     _instance.Destroyed({}).watch((err, response) => {
       if (err) {
         console.error(err);
@@ -103,6 +123,9 @@ function setInstance() {
 }
 
 var info = window.run;
+/**
+* In addition to the existing info function, also initialize the contract when the window is loaded
+*/
 window.run = function() {
   info();
 
@@ -114,6 +137,9 @@ window.run = function() {
   });
 };
 
+/**
+* Retrieve the owner address from the contract instance and print it to the in-app console
+*/
 window.getOwner = function() {
   setInstance();
   instance.then((_instance) => {
@@ -128,6 +154,9 @@ window.getOwner = function() {
   });
 };
 
+/**
+* Retrieve the inheritor address from the contract instance and print it to the in-app console
+*/
 window.getInheritor = function() {
   setInstance();
   instance.then((_instance) => {
@@ -142,6 +171,9 @@ window.getInheritor = function() {
   });
 };
 
+/**
+* Execute a contract call to change the owner address & print the result in the in-app console
+*/
 window.setOwner = function() {
   setInstance();
   var addr = document.getElementById("OWNER").value;
@@ -158,6 +190,9 @@ window.setOwner = function() {
   });
 };
 
+/**
+* Execute a contract call to change the inheritor address & print the result in the in-app console
+*/
 window.setInheritor = function() {
   setInstance();
   var addr = document.getElementById("INHERITOR").value;
@@ -174,6 +209,9 @@ window.setInheritor = function() {
   });
 };
 
+/**
+* Execute a contract call to kill the contract & print the result in the in-app console
+*/
 window.kill = function() {
   setInstance();
   instance.then((_instance) => {

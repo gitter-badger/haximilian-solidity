@@ -32,6 +32,8 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
     <script type="text/javascript" src="../../node_modules/web3/dist/web3.min.js"></script>
     <script type="text/javascript" src="../info.js"></script>
     <script type="text/javascript" src="killable.js"></script>
+
+    <!-- Setup the default web3 environment -->
     <script type="text/javascript">
       if (typeof web3 != "undefined")
         web3 = new Web3(web3.currentProvider);
@@ -42,16 +44,18 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   <body onload="run(web3)">
     <table>
       <thead>
+        <!-- Title -->
         <tr><th colspan="3"><h1><a href="../index.xhtml">Haximilian Solidity Examples</a></h1></th></tr>
       </thead>
       <tbody>
         <tr>
-          <td colspan="3" id="WEB3">
-          </td>
+          <!-- Blockchain info section -->
+          <td colspan="3" id="WEB3"></td>
         </tr>
         <tr>
           <td width="15%" rowspan="2"></td>
           <td class="content">
+            <!-- Interface for the `Killable` contract demo -->
             <label>Address: 0x</label><span><input type="text" id="ADDRESS"/></span>
             <label>New Owner: 0x</label><span><input type="text" id="OWNER"/></span>
             <label>New Inheritor: 0x</label><span><input type="text" id="INHERITOR"/></span>
@@ -69,6 +73,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
       </tbody>
       <tfoot>
         <tr><td colspan="3">
+          <!-- Trailing copyright statement -->
           <div id="COPYRIGHT">Copyright &copy; 2018 Haximilian</div><br/>
           This project is provided under the terms of the GNU AGPLv3.0 license agreement.
           Please see the included <a href="../../LICENSE.md">LICENSE.md</a> file for licensing information

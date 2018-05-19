@@ -1,4 +1,4 @@
-/**
+﻿/**
 * @fileoverview Asynchronously loads compiled JSON files from their relative URLs
 * @author Haximilian <haximilian@gmail.com>
 * @license AGPL-3.0 (See the included "LICENSE.md")
@@ -21,11 +21,19 @@
 */
 "use strict";
 
+/**
+* Loads internal JSON resources using `XMLHttpRequest`
+* @param {string} url The URL of the JSON resource being requested
+* @return {object} A `Promise` object which when fulfilled will yield the requested JSON object
+*/
 window.loadJSON = function(url) {
   console.log("Loading \"" + url + "\" into environment...");
   return new Promise(function(resolve, reject) {
     var request = new XMLHttpRequest();
 
+    /**
+    * When the `XMLHttpRequest` resolves, load the JSON content into the environment and resolve the `Promise`
+    */
     request.onreadystatechange = function() {
       if (this.readyState === 4 && this.status === 200) {
         console.log("JSON request for \"" + url + "\" resolved.");

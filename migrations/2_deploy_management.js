@@ -1,5 +1,5 @@
 ﻿/**
-* @fileoverview Deploys the "OwnerKillable" contract to the blockchain using the default address.
+* @fileoverview Deploys all contracts under "management" to the blockchain using the default address.
 * @author Haximilian <haximilian@gmail.com>
 * @license AGPL-3.0 (See the included "LICENSE.md")
 * @copyright
@@ -25,6 +25,6 @@
 const Killable = artifacts.require("Killable");
 
 module.exports = function(deployer, network, accounts) {
-  // Use deployer to state migration tasks.
+  // Use deployer to execute migration tasks.
   deployer.deploy(Killable, accounts[0]);
 };

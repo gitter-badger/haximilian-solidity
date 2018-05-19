@@ -1,3 +1,26 @@
+/**
+* Copyright (C) 2018 Haximilian
+* This file is part of the program Haximilian Solidity.
+*
+* Haximilian Solidity is free software: you can redistribute it and/or modify
+* it under the terms of the GNU Affero General Public License as
+* published by the Free Software Foundation, either version 3 of the
+* License, or (at your option) any later version.
+*
+* Haximilian Solidity is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU Affero General Public License for more details.
+*
+* You should have received a copy of the GNU Affero General Public License
+* along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
+/**
+* ---------------------------------------------------
+* | Provide general stylings to set the page layout |
+* ---------------------------------------------------
+*/
 html {
   background-attachment: fixed;
   background-image: url('./background.jpg');
@@ -44,6 +67,11 @@ thead a {
   color: black;
 }
 
+/**
+* -----------------------------------
+* | Stylize the various input forms |
+* -----------------------------------
+*/
 span {
   display: block;
   overflow: hidden;
@@ -66,6 +94,11 @@ label {
   padding-top: 0.2em;
 }
 
+/**
+* ------------------------------------------------
+* | Define major elements and container stylings |
+* ------------------------------------------------
+*/
 .content {
   background: #BBBBFF;
   display: block;
