@@ -1,5 +1,5 @@
-﻿/**
-* @fileoverview Deploys all examples for contracts under "management" to the blockchain using the default address.
+/**
+* @fileoverview Example implementation of "Killable.sol"
 * @author Haximilian <haximilian@gmail.com>
 * @license AGPL-3.0 (See the included "LICENSE.md")
 * @copyright
@@ -19,12 +19,14 @@
 * You should have received a copy of the GNU Affero General Public License
 * along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
-/* globals artifacts */
-"use strict";
+pragma solidity ~0.4.22;
 
-const ExampleKillable = artifacts.require("ExampleKillable");
+import "../management/Killable.sol";
 
-module.exports = function(deployer, network, accounts) {
-  // Use deployer to execute migration tasks.
-  deployer.deploy(ExampleKillable, accounts[0]);
-};
+
+contract ExampleKillable is Killable {
+    /**
+    * Default constructor
+    */
+    constructor(address _inheritor) public Killable(_inheritor) {}
+}

@@ -130,7 +130,7 @@ window.run = function() {
   info();
 
   contract = new Promise((resolve) => {
-    window.loadJSON("../../build/contracts/Killable.json").then((json) => {
+    window.loadJSON("../../build/contracts/ExampleKillable.json").then((json) => {
       resolve(web3.eth.contract(json.abi));
       return json;
     });
