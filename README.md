@@ -47,6 +47,7 @@ include "haximilian-solidity/contracts/staging/Staging.sol";
 For more information, see the *USAGE.md* file located inside each subdirectory of *haximilian-solidity/contracts*:
 
  - [haximilian-solidity/contracts/management](contracts/management/USAGE.md)
+ - [haximilian-solidity/contracts/state](contracts/state/USAGE.md)
 
 ## Building from source
 To get things started, you'll need to [install NPM](https://docs.npmjs.com/getting-started/installing-node#install-npm--manage-npm-versions).
