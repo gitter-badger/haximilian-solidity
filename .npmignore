@@ -3,5 +3,8 @@
 /test
 truffle-config.js
 
+# Ignore example contracts:
+/contracts/examples
+
 # Ignore all source/editing configuration files & directories:
 /.*
