@@ -1,5 +1,5 @@
 ﻿/**
-* @fileoverview Provides an interface for playing around with `Killable` contracts
+* @fileoverview Provides an interface for playing around with `LinearStateMachine` contracts
 * @author Haximilian <haximilian@gmail.com>
 * @license AGPL-3.0 (See the included "LICENSE.md")
 * @copyright
@@ -64,55 +64,18 @@ function setInstance() {
   */
   instance.then((_instance) => {
     /**
-    * When the `InheritorChanged` event is triggered, print a response to the in-app console
+    * When the `StateChange` event is triggered, print a response to the in-app console
     * @param {object} err The error object, in case something goes wrong in regestering the event listener
     * @param {object} response The object produced when the blockchain event is triggered.
     */
-    _instance.InheritorChanged({}).watch((err, response) => {
+    _instance.StateChange({}).watch((err, response) => {
       if (err) {
         console.error(err);
         output("ERROR: " + err.message);
       } else {
-        output("[EVENT] \"InheritorChanged\" triggered: " + response.args.newInheritor);
+        output("[EVENT] \"StateChange\" triggered: " + response.args.newState);
         console.group();
-        console.log(">> [EVENT] InheritorChanged");
-        console.log(response);
-        console.groupEnd();
-      }
-    });
-
-    /**
-    * When the `OwnershipTransferred` event is triggered, print a response to the in-app console
-    * @param {object} err The error object, in case something goes wrong in regestering the event listener
-    * @param {object} response The object produced when the blockchain event is triggered.
-    */
-    _instance.OwnershipTransferred({}).watch((err, response) => {
-      if (err) {
-        console.error(err);
-        output("ERROR: " + err.message);
-      } else {
-        output("[EVENT] \"OwnershipTransferred\" triggered: " + response.args.newOwner);
-        console.group();
-        console.log(">> [EVENT] OwnershipTransferred");
-        console.log(response);
-        console.groupEnd();
-      }
-    });
-
-
-    /**
-    * When the `Destroyed` event is triggered, print a response to the in-app console
-    * @param {object} err The error object, in case something goes wrong in regestering the event listener
-    * @param {object} response The object produced when the blockchain event is triggered.
-    */
-    _instance.Destroyed({}).watch((err, response) => {
-      if (err) {
-        console.error(err);
-        output("ERROR: " + err.message);
-      } else {
-        output("[EVENT] \"Destroyed\" triggered.");
-        console.group();
-        console.log(">> [EVENT] Destroyed");
+        console.log(">> [EVENT] StateChange");
         console.log(response);
         console.groupEnd();
       }
@@ -128,7 +91,7 @@ window.run = function() {
   info();
 
   contract = new Promise((resolve) => {
-    window.loadJSON("../../build/contracts/ExampleKillable.json").then((json) => {
+    window.loadJSON("../../build/contracts/ExampleLinearStateMachine.json").then((json) => {
       resolve(web3.eth.contract(json.abi));
       return json;
     });
@@ -136,89 +99,104 @@ window.run = function() {
 };
 
 /**
-* Retrieve the owner address from the contract instance and print it to the in-app console
+* Retrieve the current state from the contract instance and print it to the in-app console
 */
-window.getOwner = function() {
+window.getState = function() {
   setInstance();
   instance.then((_instance) => {
-    _instance.owner({}, (err, owner) => {
+    _instance.state({}, (err, state) => {
       if (err) {
         console.error(err);
         output("ERROR: " + err.message);
       } else
-        output("Contract Owner: " + owner);
+        output("Current State: " + state);
     });
     return _instance;
   });
 };
 
 /**
-* Retrieve the inheritor address from the contract instance and print it to the in-app console
+* Retrieve the content value from the contract instance and print it to the in-app console
 */
-window.getInheritor = function() {
+window.getContent = function() {
   setInstance();
   instance.then((_instance) => {
-    _instance.inheritor({}, (err, inheritor) => {
+    _instance.content({}, (err, content) => {
       if (err) {
         console.error(err);
         output("ERROR: " + err.message);
       } else
-        output("Contract Inheritor: " + inheritor);
+        output("Content Value: " + content);
     });
     return _instance;
   });
 };
 
 /**
-* Execute a contract call to change the owner address & print the result in the in-app console
+* Call the "setBefore3" contract method & print the result in the in-app console
 */
-window.setOwner = function() {
+window.setBefore3 = function() {
   setInstance();
-  var addr = document.getElementById("OWNER").value;
-  if (addr.charAt(1) !== "x" && addr.charAt(0) !== "0") addr = "0x" + addr;
+  var val = document.getElementById("CONTENT").value;
   instance.then((_instance) => {
-    _instance.transferOwnership(addr, {}, (err, response) => {
+    _instance.setBefore3(val, {}, (err, response) => {
       if (err) {
         console.error(err);
         output("ERROR: " + err.message);
       } else
-        output("Owner transferred: " + response);
+        output("Content Set: " + response);
     });
     return _instance;
   });
 };
 
 /**
-* Execute a contract call to change the inheritor address & print the result in the in-app console
+* Call the "setAt3" contract method & print the result in the in-app console
 */
-window.setInheritor = function() {
+window.setAt3 = function() {
   setInstance();
-  var addr = document.getElementById("INHERITOR").value;
-  if (addr.charAt(1) !== "x" && addr.charAt(0) !== "0") addr = "0x" + addr;
   instance.then((_instance) => {
-    _instance.changeInheritor(addr, {}, (err, response) => {
+    _instance.setAt3({}, (err, response) => {
       if (err) {
         console.error(err);
         output("ERROR: " + err.message);
       } else
-        output("Inheritor changed: " + response);
+        output("Content Set: " + response);
     });
     return _instance;
   });
 };
 
 /**
-* Execute a contract call to kill the contract & print the result in the in-app console
+* Call the "continueFrom3" contract method & print the result in the in-app console
 */
-window.kill = function() {
+window.continueFrom3 = function() {
   setInstance();
+  var val = document.getElementById("CONTENT").value;
   instance.then((_instance) => {
-    _instance.kill({}, (err, response) => {
+    _instance.continueFrom3(val, {}, (err, response) => {
       if (err) {
         console.error(err);
         output("ERROR: " + err.message);
       } else
-        output("Killed contract: " + response);
+        output("Content set: " + response);
+    });
+    return _instance;
+  });
+};
+
+/**
+* Call the "reset" contract method & print the result in the in-app console
+*/
+window.reset = function() {
+  setInstance();
+  instance.then((_instance) => {
+    _instance.reset({}, (err, response) => {
+      if (err) {
+        console.error(err);
+        output("ERROR: " + err.message);
+      } else
+        output("Content set: " + response);
     });
     return _instance;
   });
