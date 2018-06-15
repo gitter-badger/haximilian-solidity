@@ -13,7 +13,7 @@ A set of contracts and libraries designed for more complex use cases
 ![NPM License](https://img.shields.io/npm/l/haximilian-solidity.svg)
 ![NPM Version](https://img.shields.io/npm/v/haximilian-solidity.svg)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/haximilian-solidity?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Examples](https://www.libhive.com/providers/npm/packages/haximilian-solidity/examples/badge.svg)](https://www.libhive.com/providers/npm/packages/haximilian-solidity)
+[![Examples](https://www.libhive.com/providers/npm/packages/haximilian-solidity/examples/badge.svg)](https://www.libhive.com/providers/npm/packages/haximilian-solidity) [![Join the chat at https://gitter.im/haximilian/haximilian-solidity](https://badges.gitter.im/haximilian/haximilian-solidity.svg)](https://gitter.im/haximilian/haximilian-solidity?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ![NPM Downloads](https://img.shields.io/npm/dt/haximilian-solidity.svg)
 ![NPM Downloads/week](https://img.shields.io/npm/dw/haximilian-solidity.svg)
 
